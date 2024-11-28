@@ -1,13 +1,18 @@
 // Voici une variable : ne pas toucher :) 
 const guessName = "Sphinx";
+
 /**
    * -------------------------------------------------------
    * 1 - Si la variable guessName est égale à "Sphinx", afficher "Vive l'Égypte".
-   *  Sinon, afficher "De toute façon je ne comprends rien aux cartes"
+   *  Sinon, afficher "De toute façon je ne comprends rien aux cartes" (PERCEVAL KAAMELOTT)
    * -------------------------------------------------------
 */
 
-
+if (guessName === "Sphinx") {
+   console.log("Vive l'Égypte");
+} else {
+   console.log("De toute façon je ne comprends rien aux cartes");
+}
 
 // Voici une variable : ne pas toucher :) 
 const comparedString = "secret";
@@ -18,15 +23,16 @@ const comparedString = "secret";
     Sinon: afficher "C'est NON 🦄".
    * -------------------------------------------------------
 */
+const password = prompt("Entrer le MPD SVP");
 
-const answer = prompt();
-
-if (answer === comparedString) {
-   console.log("Bienvenue");
+if (password === comparedString) {
+   console.log("Bienvenue BG ! 🙌");
 } else {
-   console.log("Déso");
+   console.log("C'est NON 🦄");
 }
 
+// En ternary
+// password === comparedString ? console.log("Bienvenue BG ! 🙌") : console.log("C'est NON 🦄");
 
 /**
    * -------------------------------------------------------
@@ -38,6 +44,16 @@ if (answer === comparedString) {
    * -------------------------------------------------------
 */
 
+const userAge = prompt("VOTRE AGE SVP");
+if (userAge < 3) {
+   console.log("Hello Baby");
+} else if (userAge < 18) {
+   console.log("Hi!");
+} else if (userAge > 100) {
+   console.log("Greetings");
+} else {
+   console.log("Wow... 😲");
+}
 
 /**
    * -------------------------------------------------------
@@ -46,14 +62,50 @@ if (answer === comparedString) {
    * -------------------------------------------------------
 */
 
+const userName = prompt("Votre nom svp");
+const userAge2 = prompt("Votre âge svp");
+console.log(typeof userAge);
+if (userName === "Bob" && Number(userAge2) === 30) {
+   console.log("Welcome");
+} else {
+   console.log("Go away!")
+}
 
 /**
    * -------------------------------------------------------
    * 5. En Javascript, on peut récupérer la jour de la semaine en cours en utilisant new Date().getDay().
-   *  Cette expression nous nous retourne un nombre entre 0 (dimanche) et 6 (samedi).
+   *  Cette expression nous retourne un nombre entre 0 (dimanche) et 6 (samedi).
     → Utiliser une structure switch...case pour afficher dans la console le nom du jour de la semaine en fonction du nombre retourné. 
    * -------------------------------------------------------
 */
+
+const todayDate = new Date().getDay(); // 0 ou 1 ou 2 ... ou 6
+switch (todayDate) {
+   case 0:
+      console.log("Dimanche");
+      break;
+   case 1:
+      console.log("Lundi");
+      break;
+   case 2:
+      console.log("Mardi");
+      break;
+   case 3:
+      console.log("Mercredi");
+      break;
+   case 4:
+      console.log("Jeudi");
+      break;
+   case 5:
+      console.log("Vendredi");
+      break;
+   case 6:
+      console.log("Samedi");
+      break;
+
+   default:
+      break;
+}
 
 
 // Voici un bout de code. Ne pas toucher !
@@ -73,34 +125,4 @@ if (animal.name === 'Lucky') {
    * -------------------------------------------------------
 */
 
-
-
-// Voici un jeu de données : ne pas toucher :) 
-const n1 = 1
-const n2 = 13
-const n3 = 20
-const n4 = 41
-const n5 = 70
-const n6 = 100
-
-/**
-   * -------------------------------------------------------
-   * 7 - Pour chaque donnée, vérifier si elle est paire. Si oui, afficher sa valeur suivie de "est paire ✅". Sinon, afficher sa valeur suivie de "Impaire ❌"
-   * -------------------------------------------------------
-*/
-
-if (n1 % 2) {
-   console.log(n1 + ' est paire ✅');
-} else {
-
-}
-const firstname = "paul";
-const condition = firstname.toLowerCase() === "Paul".toLowerCase();
-const condition2 = {};
-
-// Valeurs falsy : 0, -0, undefined, false, null, NaN, ""
-if (condition2) { // false
-   console.log("salut paul");
-} else {
-   console.log("OMG C FO");
-}
+animal.name === "Lucky" ? console.log("Voici un Pôtichat mignon") : console.log("Argh ! Ce n'est pas mon chat...");
